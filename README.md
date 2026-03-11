@@ -2,7 +2,7 @@
 
 # Harness Engineering for AI Agents
 
-**Structured planning, execution, and enforcement for AI coding agents.**
+**A field guide and bootstrap kit for AI coding agents that actually stay on track.**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?labelColor=1A1C29)](./LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?labelColor=1A1C29)](https://nodejs.org)
@@ -13,9 +13,15 @@
 
 </div>
 
-Patterns and tooling for working with AI coding agents: structured planning, TDD, parallel subagent execution, git hook enforcement, and keeping your harness (`CLAUDE.md` / `AGENTS.md`) in sync with your code.
+AI coding agents are stateless with finite context windows. Every tool call, every file read, every thinking block compounds — and eventually the agent loses its original instructions, forgets earlier decisions, and starts producing churn instead of progress. [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) called this discipline "context engineering": the art of filling the context window with just the right information at just the right time.
 
-Draws from [OpenAI](https://openai.com/index/harness-engineering/), [Augment Code](https://www.augmentcode.com/blog/your-agents-context-is-a-junk-drawer), [Anthropic](https://www.threads.com/@boris_cherny/post/DUMZr4VElyb/), and practitioners like [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) (AI researcher, co-founder of OpenAI), [Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny) (creator of Claude Code), and [Thariq Shihipar](https://x.com/trq212) (Claude Code team at Anthropic). Includes a bootstrap kit (templates, enforcement scripts, git hooks, auto-generation) that sets up a project with one command.
+Harness engineering is context engineering applied to coding agents. It's how you structure rule files, plan before building, enforce quality mechanically, and keep documentation in sync with code — so your agent stays aligned across long sessions instead of going off the rails.
+
+This repo is two things:
+
+1. **A field guide** to harness engineering — mapping 20+ best practices from [OpenAI](https://openai.com/index/harness-engineering/), [Augment Code](https://www.augmentcode.com/blog/your-agents-context-is-a-junk-drawer), [Anthropic](https://www.threads.com/@boris_cherny/post/DUMZr4VElyb/), and practitioners like [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) (AI researcher, co-founder of OpenAI), [Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny) (creator of Claude Code), and [Thariq Shihipar](https://x.com/trq212) (Claude Code team at Anthropic) to concrete implementation patterns.
+
+2. **A bootstrap kit** that sets up a project with one command: `CLAUDE.md` templates, TDD enforcement, git hooks (secret scan, file size limits, auto-generated docs, drift detection), and recommended planning tools (BMAD, Superpowers, Sidecar).
 
 
 <div align="center">
