@@ -1,6 +1,6 @@
 <div align="center">
 
-# Harness Engineering and Best Practices for AI Agents
+# Harness Engineering and Best Practices for Coding Agents
 
 **A field guide and bootstrap kit for long-running AI coding agent harnesses**
 
