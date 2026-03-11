@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Pre-push hook: thorough checks
+# 1. Full test suite (skipped if tests already passed for this commit)
+# 2. npm audit (warn only)
+
+# Check if tests already passed for the current HEAD commit
+HEAD_SHA=$(git rev-parse HEAD 2>/dev/null)
+CACHED_SHA=""
+if [ -f .test-passed ]; then
+  CACHED_SHA=$(cat .test-passed 2>/dev/null | tr -d '[:space:]')
+fi
+
+if [ -n "$HEAD_SHA" ] && [ "$HEAD_SHA" = "$CACHED_SHA" ]; then
+  echo "Tests already passed for $HEAD_SHA - skipping."
+else
+  echo "Running full test suite before push..."
+  npm run test:all
+fi
+
+echo "Checking for dependency vulnerabilities..."
+npm audit --audit-level=moderate || echo "  (npm audit warnings above - review when convenient)"

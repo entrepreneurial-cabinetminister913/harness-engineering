@@ -1,0 +1,8 @@
+node_modules/
+.test-passed
+.env
+.env.local
+coverage/
+dist/
+build/
+*.log

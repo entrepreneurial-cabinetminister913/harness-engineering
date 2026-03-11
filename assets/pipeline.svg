@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -50 1140 600" width="1140" height="600">
+  <defs>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58A6FF;stop-opacity:0.5"/>
+      <stop offset="33%" style="stop-color:#3FB950;stop-opacity:0.5"/>
+      <stop offset="66%" style="stop-color:#D29922;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#F85149;stop-opacity:0.5"/>
+    </linearGradient>
+    <filter id="glowBlue" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#58A6FF" flood-opacity="0.5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowGreen" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#3FB950" flood-opacity="0.5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowAmber" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#D29922" flood-opacity="0.5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowRed" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#F85149" flood-opacity="0.5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="phaseArrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M 0 1 L 10 6 L 0 11 z" style="fill:#8B949E"/>
+    </marker>
+  </defs>
+
+  <rect x="-20" y="-50" width="1140" height="600" rx="12" style="fill:#0D1117"/>
+  <text x="550" y="22" style="fill:#E6EDF3;font-family:monospace;font-size:13px;text-anchor:middle;letter-spacing:4px;opacity:0.8">HARNESS-ENGINEERED AGENTIC WORKFLOW</text>
+  <line x1="350" y1="38" x2="750" y2="38" style="stroke:#21262D;stroke-width:1;opacity:0.6"/>
+
+  <!-- Progress bar -->
+  <rect x="65" y="62" width="970" height="5" rx="2.5" style="fill:url(#barGrad)"/>
+
+  <!-- Phase-to-phase connector arrows -->
+  <line x1="180" y1="64" x2="295" y2="64" style="stroke:#8B949E;stroke-width:2.5" marker-end="url(#phaseArrow)"/>
+  <line x1="465" y1="64" x2="595" y2="64" style="stroke:#8B949E;stroke-width:2.5" marker-end="url(#phaseArrow)"/>
+  <line x1="765" y1="64" x2="815" y2="64" style="stroke:#8B949E;stroke-width:2.5" marker-end="url(#phaseArrow)"/>
+
+
+  <!-- ================================================================== -->
+  <!-- PHASE 1: PLAN -->
+  <!-- ================================================================== -->
+  <circle cx="155" cy="64" r="22" style="fill:#161B22;stroke:#58A6FF;stroke-width:2.5" filter="url(#glowBlue)"/>
+  <text x="155" y="70" style="fill:#58A6FF;font-family:monospace;font-size:16px;font-weight:bold;text-anchor:middle">1</text>
+  <text x="155" y="108" style="fill:#58A6FF;font-family:monospace;font-size:14px;font-weight:bold;text-anchor:middle;letter-spacing:2px">PLAN</text>
+
+  <!-- Optional PRD input -->
+  <rect x="60" y="122" width="195" height="20" rx="3" style="fill:#0D1117;stroke:#58A6FF;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="74" y="136" style="fill:#58A6FF;font-family:monospace;font-size:9.5px;opacity:0.9">📖 Existing PRD (optional input)</text>
+
+  <!-- Brainstorming -->
+  <rect x="50" y="148" width="210" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="50" y="148" width="3" height="24" rx="1" style="fill:#58A6FF"/>
+  <text x="63" y="164" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Brainstorming</text>
+  <rect x="65" y="175" width="195" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="75" y="189" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Socratic Q&amp;A · 2-3 Approaches</text>
+
+  <!-- Design Doc -->
+  <rect x="50" y="201" width="210" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="50" y="201" width="3" height="24" rx="1" style="fill:#58A6FF"/>
+  <text x="63" y="217" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Design Doc / Spec</text>
+  <rect x="65" y="229" width="195" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="75" y="243" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Architecture · Components</text>
+  <rect x="65" y="252" width="195" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="75" y="266" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Data Flow · Error Handling</text>
+  <rect x="65" y="275" width="195" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="75" y="289" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Testing Strategy · File Map</text>
+
+  <!-- FILE OUTPUT: design spec -->
+  <rect x="60" y="300" width="195" height="20" rx="3" style="fill:#0D1117;stroke:#58A6FF;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="74" y="314" style="fill:#58A6FF;font-family:monospace;font-size:9.5px;opacity:0.9">📄 docs/specs/design.md</text>
+
+  <!-- Spec Review -->
+  <rect x="50" y="328" width="210" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="50" y="328" width="3" height="24" rx="1" style="fill:#58A6FF"/>
+  <text x="63" y="344" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Spec Review</text>
+
+  <!-- Adversarial Review -->
+  <rect x="50" y="360" width="210" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="50" y="360" width="3" height="24" rx="1" style="fill:#58A6FF"/>
+  <text x="63" y="376" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Adversarial Review</text>
+  <rect x="65" y="388" width="195" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="75" y="402" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Multi-LLM Debate · Must find issues</text>
+
+  <!-- Plan Decomposition -->
+  <rect x="50" y="416" width="210" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="50" y="416" width="3" height="24" rx="1" style="fill:#58A6FF"/>
+  <text x="63" y="432" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Plan Decomposition</text>
+  <rect x="65" y="444" width="195" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="75" y="458" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Atomic tasks · Deps · ⫽ Parallel chunks</text>
+
+  <!-- FILE OUTPUT: plan -->
+  <rect x="60" y="469" width="195" height="20" rx="3" style="fill:#0D1117;stroke:#58A6FF;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="74" y="483" style="fill:#58A6FF;font-family:monospace;font-size:9.5px;opacity:0.9">📄 docs/plans/plan.md</text>
+
+  <!-- ================================================================== -->
+  <!-- PHASE 2: EXECUTE -->
+  <!-- ================================================================== -->
+  <circle cx="440" cy="64" r="22" style="fill:#161B22;stroke:#3FB950;stroke-width:2.5" filter="url(#glowGreen)"/>
+  <text x="440" y="70" style="fill:#3FB950;font-family:monospace;font-size:16px;font-weight:bold;text-anchor:middle">2</text>
+  <text x="440" y="108" style="fill:#3FB950;font-family:monospace;font-size:14px;font-weight:bold;text-anchor:middle;letter-spacing:2px">EXECUTE</text>
+
+  <!-- Reads plan file -->
+  <rect x="320" y="122" width="240" height="20" rx="3" style="fill:#0D1117;stroke:#3FB950;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="334" y="136" style="fill:#3FB950;font-family:monospace;font-size:9.5px;opacity:0.9">📖 Reads plan → groups parallel chunks</text>
+
+  <!-- Task creation -->
+  <rect x="320" y="146" width="240" height="20" rx="3" style="fill:#0D1117;stroke:#3FB950;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="334" y="160" style="fill:#3FB950;font-family:monospace;font-size:9.5px;opacity:0.9">📄 TodoWrite → task list on disk</text>
+
+  <!-- Parallel Dispatch — stacked shadows suggest multiple simultaneous subagents -->
+  <rect x="328" y="178" width="240" height="24" rx="4" style="fill:#161B22;stroke:#3FB950;stroke-width:0.5;opacity:0.25"/>
+  <rect x="324" y="175" width="240" height="24" rx="4" style="fill:#161B22;stroke:#3FB950;stroke-width:0.5;opacity:0.4"/>
+  <rect x="320" y="172" width="240" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="320" y="172" width="3" height="24" rx="1" style="fill:#3FB950"/>
+  <text x="333" y="188" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Dispatch Parallel Subagents</text>
+  <rect x="335" y="199" width="225" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="345" y="213" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Independent tasks run concurrently</text>
+
+  <!-- TDD -->
+  <rect x="320" y="225" width="240" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="320" y="225" width="3" height="24" rx="1" style="fill:#3FB950"/>
+  <text x="333" y="241" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">TDD: Red → Green → Refactor</text>
+  <rect x="335" y="253" width="225" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="345" y="267" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Write failing test → Implement → Pass</text>
+
+  <!-- File output: src + tests -->
+  <rect x="330" y="278" width="225" height="20" rx="3" style="fill:#0D1117;stroke:#3FB950;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="344" y="292" style="fill:#3FB950;font-family:monospace;font-size:9.5px;opacity:0.9">📄 src/ + tests/ → git commit</text>
+
+  <!-- Spec Compliance Review -->
+  <rect x="320" y="306" width="240" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="320" y="306" width="3" height="24" rx="1" style="fill:#3FB950"/>
+  <text x="333" y="322" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Spec Compliance Review</text>
+  <rect x="335" y="334" width="225" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="345" y="348" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Matches spec? No extra, no gaps</text>
+
+
+  <!-- Code Quality Review -->
+  <rect x="320" y="362" width="240" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="320" y="362" width="3" height="24" rx="1" style="fill:#3FB950"/>
+  <text x="333" y="378" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Code Quality Review</text>
+  <rect x="335" y="390" width="225" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="345" y="404" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Bugs · Style · Patterns · Security</text>
+
+
+  <!-- Next Task Loop -->
+  <rect x="320" y="418" width="240" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="320" y="418" width="3" height="24" rx="1" style="fill:#3FB950"/>
+  <text x="333" y="434" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Mark Complete → Next Task</text>
+
+  <!-- Task status update -->
+  <rect x="330" y="446" width="225" height="20" rx="3" style="fill:#0D1117;stroke:#3FB950;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="344" y="460" style="fill:#3FB950;font-family:monospace;font-size:9.5px;opacity:0.9">📄 TodoUpdate → status on disk</text>
+
+
+  <!-- ================================================================== -->
+  <!-- PHASE 3: COMMIT -->
+  <!-- ================================================================== -->
+  <circle cx="740" cy="64" r="22" style="fill:#161B22;stroke:#D29922;stroke-width:2.5" filter="url(#glowAmber)"/>
+  <text x="740" y="70" style="fill:#D29922;font-family:monospace;font-size:16px;font-weight:bold;text-anchor:middle">3</text>
+  <text x="740" y="108" style="fill:#D29922;font-family:monospace;font-size:14px;font-weight:bold;text-anchor:middle;letter-spacing:2px">COMMIT</text>
+
+  <rect x="660" y="122" width="160" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="660" y="122" width="3" height="24" rx="1" style="fill:#D29922"/>
+  <text x="673" y="138" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">ESLint Auto-Fix</text>
+
+  <rect x="660" y="150" width="160" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="660" y="150" width="3" height="24" rx="1" style="fill:#D29922"/>
+  <text x="673" y="166" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Secret Scan</text>
+
+  <rect x="660" y="178" width="160" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="660" y="178" width="3" height="24" rx="1" style="fill:#D29922"/>
+  <text x="673" y="194" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">File Size Check</text>
+
+  <rect x="660" y="206" width="160" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="660" y="206" width="3" height="24" rx="1" style="fill:#D29922"/>
+  <text x="673" y="222" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Doc Generation</text>
+  <rect x="675" y="233" width="145" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="685" y="247" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Scans src/ scripts/ tests/</text>
+  <rect x="675" y="256" width="145" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="685" y="270" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Regenerates AUTO markers</text>
+  <rect x="675" y="279" width="145" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="685" y="293" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Validates cross-links</text>
+
+  <!-- FILE OUTPUT: CLAUDE.md -->
+  <rect x="670" y="304" width="150" height="20" rx="3" style="fill:#0D1117;stroke:#D29922;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="684" y="318" style="fill:#D29922;font-family:monospace;font-size:9.5px;opacity:0.9">📄 Auto-stages CLAUDE.md</text>
+
+  <!-- Drift Warning -->
+  <rect x="660" y="332" width="160" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="660" y="332" width="3" height="24" rx="1" style="fill:#D29922"/>
+  <text x="673" y="348" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Drift Warning</text>
+  <rect x="675" y="359" width="145" height="20" rx="3" style="fill:#0D1117;stroke:#21262D;stroke-width:0.5"/>
+  <text x="685" y="373" style="fill:#8B949E;font-family:sans-serif;font-size:10px">Warns if src ≠ docs</text>
+
+  <!-- ================================================================== -->
+  <!-- PHASE 4: PUSH -->
+  <!-- ================================================================== -->
+  <circle cx="960" cy="64" r="22" style="fill:#161B22;stroke:#F85149;stroke-width:2.5" filter="url(#glowRed)"/>
+  <text x="960" y="70" style="fill:#F85149;font-family:monospace;font-size:16px;font-weight:bold;text-anchor:middle">4</text>
+  <text x="960" y="108" style="fill:#F85149;font-family:monospace;font-size:14px;font-weight:bold;text-anchor:middle;letter-spacing:2px">PUSH</text>
+
+  <rect x="880" y="122" width="160" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="880" y="122" width="3" height="24" rx="1" style="fill:#F85149"/>
+  <text x="893" y="138" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Test Suite (SHA cached)</text>
+
+  <rect x="890" y="149" width="150" height="20" rx="3" style="fill:#0D1117;stroke:#F85149;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="904" y="163" style="fill:#F85149;font-family:monospace;font-size:9.5px;opacity:0.9">📄 .test-passed (SHA)</text>
+
+  <rect x="880" y="177" width="160" height="24" rx="4" style="fill:#161B22;stroke:#21262D;stroke-width:0.5"/>
+  <rect x="880" y="177" width="3" height="24" rx="1" style="fill:#F85149"/>
+  <text x="893" y="193" style="fill:#E6EDF3;font-family:sans-serif;font-size:11.5px">Dependency Audit</text>
+
+  <rect x="890" y="209" width="150" height="20" rx="3" style="fill:#0D1117;stroke:#F85149;stroke-width:1;stroke-dasharray:3,2;opacity:0.8"/>
+  <text x="904" y="223" style="fill:#F85149;font-family:monospace;font-size:9.5px;opacity:0.9">🚀 → Remote repository</text>
+
+  <rect x="-20" y="-50" width="1140" height="600" rx="12" style="fill:none;stroke:#30363D;stroke-width:1"/>
+</svg>
