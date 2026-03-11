@@ -1,6 +1,6 @@
 <div align="center">
 
-# Harness Engineering for AI Agents
+# Harness Engineering and Best Practices for AI Agents
 
 **A field guide and bootstrap kit for long-running AI coding agent harnesses**
 
@@ -13,9 +13,9 @@
 
 </div>
 
-AI coding agents are stateless with finite context windows. Every tool call, every file read, every thinking block compounds — and eventually the agent loses its original instructions, forgets earlier decisions, and starts producing churn instead of progress. [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) called this discipline "context engineering": the art of filling the context window with just the right information at just the right time.
+AI coding agents are stateless with finite context windows. Every tool call, every file read, every thinking block compounds - and eventually the agent loses its original instructions, forgets earlier decisions, and starts producing churn instead of progress. [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) called this discipline "context engineering": the art of filling the context window with just the right information at just the right time.
 
-Harness engineering is context engineering applied to coding agents. It's how you structure rule files, plan before building, enforce quality mechanically, and keep documentation in sync with code — so your agent stays aligned across long sessions instead of going off the rails.
+Harness engineering is context engineering applied to coding agents. It's how you structure rule files, plan before building, enforce quality mechanically, and keep documentation in sync with code - so your agent stays aligned across long sessions instead of going off the rails.
 
 This repo is two things:
 
