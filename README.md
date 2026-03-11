@@ -2,7 +2,7 @@
 
 # Harness Engineering for AI Agents
 
-**A field guide and bootstrap kit for AI coding agents that actually stay on track.**
+**A field guide and bootstrap kit for long-running AI coding agent harnesses**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?labelColor=1A1C29)](./LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?labelColor=1A1C29)](https://nodejs.org)
