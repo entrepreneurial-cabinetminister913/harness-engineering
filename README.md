@@ -21,7 +21,7 @@ This repo is two things:
 
 1. **A field guide** to harness engineering — mapping 20+ best practices from [OpenAI](https://openai.com/index/harness-engineering/), [Augment Code](https://www.augmentcode.com/blog/your-agents-context-is-a-junk-drawer), [Anthropic](https://www.threads.com/@boris_cherny/post/DUMZr4VElyb/), and practitioners like [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) (AI researcher, co-founder of OpenAI), [Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny) (creator of Claude Code), and [Thariq Shihipar](https://x.com/trq212) (Claude Code team at Anthropic) to concrete implementation patterns.
 
-2. **A bootstrap kit** that sets up a project with one command: `CLAUDE.md` templates, TDD enforcement, git hooks (secret scan, file size limits, auto-generated docs, drift detection), and recommended planning tools (BMAD, Superpowers, Sidecar).
+2. **A bootstrap kit** that sets up a project with one command: `CLAUDE.md` templates, TDD enforcement, git hooks (secret scan, file size limits, auto-generated docs, drift detection), and integrated agentic workflows (BMAD, Superpowers, Sidecar).
 
 
 <div align="center">
@@ -61,9 +61,9 @@ Agents that start coding without a plan produce more churn than progress. They m
 
 Write failing tests first, implement the minimum to pass, then refactor. Every task follows Red-Green-Refactor. The global CLAUDE.md template enforces this.
 
-### Recommended Planning Tools
+### Integrated Development Workflows
 
-These agentic planning systems integrate directly with Claude Code and complement this bootstrap kit:
+These agentic development systems plug directly into your harness. They don't just plan — they enforce a structured workflow from ideation through implementation, code review, and quality gates:
 
 #### For Large Projects: BMAD Method
 
@@ -84,7 +84,7 @@ npx bmad-method install
 
 Use `/bmad-help` to see what step comes next. Start fresh chats for each workflow to avoid context window limits.
 
-#### For Smaller Features: Superpowers Plugin
+#### For Feature Development: Superpowers Plugin
 
 [Superpowers](https://github.com/obra/superpowers) is a Claude Code plugin with 16 composable skills that enforce a structured workflow: brainstorm, plan, implement, review.
 
@@ -138,12 +138,12 @@ Its `/orchestrate` command chains planner, TDD guide, code reviewer, security re
 
 | Scenario | Tool | Why |
 |---|---|---|
-| **Large project, complex architecture** | BMAD | Full lifecycle planning with adversarial review and quality gates |
-| **Feature work, day-to-day development** | Superpowers | Fast brainstorm-to-implementation loop with subagent execution |
+| **Large project, complex architecture** | BMAD | Full lifecycle from analysis through implementation with adversarial review at every gate |
+| **Feature work, day-to-day development** | Superpowers | Brainstorm → plan → TDD → subagent execution → code review in one enforced workflow |
 | **Stress-testing a design decision** | Claude Sidecar | Multi-LLM debate catches blind spots no single model finds |
-| **Full agent harness with everything built in** | Everything Claude Code | Comprehensive tooling if you want maximum coverage out of the box |
+| **Full agent harness with everything built in** | Everything Claude Code | One harness that tries to do everything — 17 agents, orchestration, continuous learning |
 
-Use BMAD or Superpowers for planning, Sidecar for adversarial review, and this bootstrap kit for the mechanical enforcement layer underneath.
+These workflows sit on top of this bootstrap kit's mechanical enforcement layer. Together they form a complete system: the workflows steer how you develop, the harness enforces quality at every commit.
 
 ---
 
