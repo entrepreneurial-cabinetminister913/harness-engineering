@@ -285,10 +285,30 @@ The pre-commit hook runs this automatically. Use `--check` flag for CI validatio
 
 ---
 
+## Writing Good CLAUDE.md Content
+
+Every line in this file is part of the agent's prompt — make each one earn its place.
+
+**Good content** (add this):
+- Commands that save re-discovery: `npm run seed -- --reset` resets the dev database
+- Gotchas that prevent repeat debugging: "Auth middleware must run before rate-limiter or tokens are rejected"
+- Config quirks: "PORT must be 3001 in dev — 3000 conflicts with the frontend proxy"
+- Architecture knowledge not obvious from code: "Billing events are async — webhook handler in `src/webhooks/` processes them"
+
+**Bad content** (don't add this):
+- Obvious code descriptions: "UserService handles user operations" — the class name already says this
+- Generic best practices: "Always write tests" — that's universal, not project-specific
+- One-off fixes unlikely to recur: "Fixed typo in line 42 of config.js"
+- Verbose explanations: use one line, not a paragraph
+
+---
+
 ## Critical Gotchas
 
 <!-- TIP: Document the non-obvious things that will bite an agent (or a new developer).
-     Focus on things that cause silent failures or confusing errors. -->
+     Focus on things that cause silent failures or confusing errors.
+     When you discover gotchas, working commands, config quirks, or patterns that would
+     save a future session from re-discovery — add them here, not to memory. -->
 
 - **[Gotcha 1]**: [Brief explanation of the trap and the correct approach]
 - **[Gotcha 2]**: [Brief explanation of the trap and the correct approach]

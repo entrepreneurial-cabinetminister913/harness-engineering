@@ -133,6 +133,12 @@ These are high-priority behavioral rules that govern how Claude Code approaches 
 - Zero context switching required from the user
 - Go fix failing CI tests without being told how
 
+### 8. Capture Discoveries
+
+- When you discover non-obvious gotchas, working commands, config quirks, or patterns that would save a future session from re-discovery — add them to the **Critical Gotchas** section of the project's CLAUDE.md, not to memory.
+- Keep entries to one line each: `**[thing]**: [brief explanation]`
+- Only add project-specific knowledge. Do not add generic best practices, obvious code descriptions ("UserService handles users"), one-off fixes unlikely to recur, or verbose explanations.
+
 ### Core Development Principles
 
 - **Simplicity First**: Make every change as simple as possible. Impact minimal code.
@@ -278,6 +284,8 @@ After starting any development server:
 Each project in this directory may have its own CLAUDE.md file with project-specific guidance. Always check for and follow the project-specific rules in addition to this global guidance.
 
 **Project-specific files take precedence over global guidance** when there are conflicts.
+
+**Personal vs team config**: Use `CLAUDE.md` (committed to git) for team-shared guidance. Use `.claude.local.md` (gitignored) for personal preferences, local paths, or machine-specific setup that shouldn't be shared.
 
 Examples of project-specific guidance:
 - Framework choices (Next.js, Express, etc.)
