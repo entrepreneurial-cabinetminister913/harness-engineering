@@ -196,11 +196,8 @@ This kit implements the core patterns from leading voices in agent-assisted engi
 ### 1. Install the plugin
 
 ```
-# Install the plugin from a local clone
-/plugin install /path/to/harness-engineering
-
-# Or if published to a marketplace:
-# /plugin install harness-engineering@<marketplace>
+# Install the plugin from GitHub
+/plugin install jrenaldi79/harness-engineering
 ```
 
 ### 2. Set up your project
