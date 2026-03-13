@@ -12,19 +12,19 @@ const os = require('node:os');
 const {
   buildDirectoryTree,
   buildModuleIndex,
-} = require('../../scripts/generate-docs-helpers');
+} = require('../../skills/setup/scripts/lib/generate-docs-helpers');
 
 const {
   replaceMarkers,
   validateCrossLinks,
   buildPlansIndex,
   checkMarkersAreCurrent,
-} = require('../../scripts/generate-docs');
+} = require('../../skills/setup/scripts/lib/generate-docs');
 
 const {
   extractJSDocDescription,
   extractExports,
-} = require('../../scripts/generate-docs-helpers');
+} = require('../../skills/setup/scripts/lib/generate-docs-helpers');
 
 /** Create a temp directory for each test, cleaned up after. */
 let tmpDir;
