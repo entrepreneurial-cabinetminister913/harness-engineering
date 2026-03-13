@@ -2,7 +2,7 @@
 
 # Harness Engineering and Best Practices for Coding Agents
 
-**A field guide and bootstrap kit for long-running AI coding agent harnesses**
+**A field guide and Claude Code plugin for long-running AI coding agent harnesses**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?labelColor=1A1C29)](./LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?labelColor=1A1C29)](https://nodejs.org)
@@ -21,7 +21,7 @@ This repo is two things:
 
 1. **A field guide** to harness engineering — mapping 20+ best practices from [OpenAI](https://openai.com/index/harness-engineering/), [Augment Code](https://www.augmentcode.com/blog/your-agents-context-is-a-junk-drawer), [Anthropic](https://www.threads.com/@boris_cherny/post/DUMZr4VElyb/), and practitioners like [Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) (AI researcher, co-founder of OpenAI), [Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny) (creator of Claude Code), and [Thariq Shihipar](https://x.com/trq212) (Claude Code team at Anthropic) to concrete implementation patterns.
 
-2. **A bootstrap kit** that sets up a project with one command: `CLAUDE.md` templates, TDD enforcement, git hooks (secret scan, file size limits, auto-generated docs, drift detection), and integrated agentic workflows (BMAD, Superpowers, Sidecar).
+2. **A Claude Code plugin** (`/setup`) that sets up a project through Socratic questioning: `CLAUDE.md` templates, TDD enforcement, git hooks (secret scan, file size limits, auto-generated docs, drift detection), and integrated agentic workflows (BMAD, Superpowers, Sidecar). Supports any language or stack — Node/TypeScript is the recommended default for web projects, but the skill adapts to Python, Go, Rust, C/C++, and more.
 
 
 <div align="center">
@@ -191,40 +191,39 @@ This kit implements the core patterns from leading voices in agent-assisted engi
 
 ## Quick Start
 
-**Prerequisites:** [Node.js](https://nodejs.org/) (v18+) and [Git](https://git-scm.com/).
+**Prerequisites:** [Claude Code](https://claude.ai/code) with plugin support, [Git](https://git-scm.com/), and [Node.js](https://nodejs.org/) (v18+) for Node/TypeScript projects.
 
-### 1. Bootstrap your project
+### 1. Install the plugin
 
-```bash
-# Create a new project (or omit the name to bootstrap in the current directory)
-node /path/to/harness-engineering/scaffolding/setup.js my-project
+```
+# Install the plugin from a local clone
+/plugin install /path/to/harness-engineering
+
+# Or if published to a marketplace:
+# /plugin install harness-engineering@<marketplace>
 ```
 
-This single command will:
+### 2. Set up your project
+
+```
+/setup
+```
+
+The `/setup` skill walks you through Socratic questions to determine your stack (language, framework, testing approach, deployment target), then scaffolds and configures the project. It works with any language — Node/TypeScript is the recommended default for web projects, but the skill adapts to Python, Go, Rust, C/C++, and more.
+
+What happens during setup:
 
 | Step | What Happens |
 |------|-------------|
-| Init | Creates `package.json` and initializes git |
-| Dependencies | Installs `husky`, `lint-staged`, `jest`, `eslint` |
-| Scripts | Copies 5 enforcement scripts into `scripts/` |
+| Discovery | Socratic questions determine your stack, language, and project goals |
+| Init | Creates project structure and initializes git |
+| Dependencies | Installs tooling appropriate for your stack |
+| Scripts | Copies enforcement scripts into `scripts/` |
 | Hooks | Sets up pre-commit and pre-push git hooks |
-| Configs | Copies `.eslintrc.js`, `.prettierrc`, `.gitignore`, `.env.example` |
-| npm scripts | Adds `test`, `test:all`, `lint`, `validate-docs`, `generate-docs` |
-| Structure | Creates `src/`, `tests/`, `scripts/`, `docs/` |
+| Configs | Copies linter, formatter, and environment configs |
+| CLAUDE.md | Generates tailored `CLAUDE.md` files for global and project scope |
 
-Works on **macOS, Linux, and Windows**. No bash required.
-
-### 2. Set up your CLAUDE.md files
-
-```bash
-# Global standards (one-time, shared across all projects)
-cp /path/to/harness-engineering/templates/global-claude.md ~/projects/CLAUDE.md
-
-# Project-specific guidance
-cp /path/to/harness-engineering/templates/project-claude.md my-project/CLAUDE.md
-```
-
-Open each file and fill in the `[bracketed placeholders]` with your project's details.
+Works on **macOS, Linux, and Windows**.
 
 ### 3. Start building
 
@@ -240,31 +239,34 @@ The pre-commit hook runs automatically. If everything passes, your harness is ac
 
 ```
 harness-engineering/
-├── templates/
-│   ├── global-claude.md          # Cross-project standards (TDD, quality, conventions)
-│   └── project-claude.md         # Per-project guidance (architecture, commands, gotchas)
-├── scaffolding/
-│   ├── setup.js                  # One-command project bootstrap
+├── .claude-plugin/
+│   └── plugin.json               # Plugin manifest
+├── skills/setup/
+│   ├── SKILL.md                  # Main orchestrator — runs on /setup
 │   ├── scripts/
-│   │   ├── check-secrets.js      # Blocks commits containing API keys or tokens
-│   │   ├── check-file-sizes.js   # Blocks files over 300 lines
-│   │   ├── validate-docs.js      # Warns when CLAUDE.md drifts from code
-│   │   ├── generate-docs.js      # Auto-regenerates CLAUDE.md sections from source
-│   │   └── generate-docs-helpers.js
-│   ├── hooks/
-│   │   ├── pre-commit            # Runs all checks on every commit (<2s)
-│   │   └── pre-push              # Runs test suite before push (with smart caching)
-│   ├── configs/
-│   │   ├── eslint-base.js        # Baseline ESLint rules
-│   │   ├── lint-staged.config.js # Auto-fix on staged files
-│   │   └── .prettierrc           # Code formatting
+│   │   ├── init-project.js       # Node/TS project scaffolding
+│   │   ├── install-enforcement.js # Copies enforcement tooling into target project
+│   │   ├── generate-claude-md.js # Generates tailored CLAUDE.md files
+│   │   ├── lib/
+│   │   │   ├── check-secrets.js      # Blocks commits containing API keys or tokens
+│   │   │   ├── check-file-sizes.js   # Blocks files over 300 lines
+│   │   │   ├── validate-docs.js      # Warns when CLAUDE.md drifts from code
+│   │   │   ├── generate-docs.js      # Auto-regenerates CLAUDE.md sections from source
+│   │   │   └── generate-docs-helpers.js
+│   │   └── hooks/
+│   │       ├── pre-commit            # Runs all checks on every commit (<2s)
+│   │       └── pre-push              # Runs test suite before push (with smart caching)
 │   ├── templates/
-│   │   ├── .gitignore            # Standard Node.js gitignore
-│   │   └── .env.example          # Environment variable placeholder
-│   └── tests/
-│       └── scripts/
-│           └── generate-docs.test.js  # 38 tests for the doc generation system
-└── README.md                     # You are here
+│   │   ├── global-claude.md          # Cross-project standards (TDD, quality, conventions)
+│   │   ├── project-claude.md         # Per-project guidance (architecture, commands, gotchas)
+│   │   ├── eslint-base.js            # Baseline ESLint rules
+│   │   ├── lint-staged.config.js     # Auto-fix on staged files
+│   │   ├── .prettierrc               # Code formatting
+│   │   ├── .gitignore                # Standard gitignore
+│   │   └── .env.example              # Environment variable placeholder
+│   └── references/                   # Stack patterns, enforcement docs, CLAUDE.md guide
+├── tests/                            # Tests for plugin development
+└── README.md                         # You are here
 ```
 
 ---
@@ -436,13 +438,13 @@ Every enforcement script has a `CONFIG` object at the top. Edit patterns, limits
 
 The templates use `<!-- TIP: ... -->` HTML comments that are invisible when rendered but visible when editing. They guide you through customization without cluttering the final document.
 
-See the [scaffolding README](scaffolding/README.md) for full details on each script and hook.
+See the scripts in `skills/setup/scripts/lib/` for full details on each enforcement script, and `skills/setup/scripts/hooks/` for the git hook implementations.
 
 ---
 
 ## Design Decisions
 
-**Cross-platform setup.** The bootstrap script (`setup.js`) is written in Node.js, not bash. It works on macOS, Linux, and Windows without requiring WSL or Git Bash.
+**Cross-platform setup.** The scaffolding scripts are written in Node.js, not bash. They work on macOS, Linux, and Windows without requiring WSL or Git Bash.
 
 **Configurable, not hardcoded.** Every enforcement script uses a `CONFIG` object at the top. Customize patterns, limits, and paths without understanding the implementation.
 
