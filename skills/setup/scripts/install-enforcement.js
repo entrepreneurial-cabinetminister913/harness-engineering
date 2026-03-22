@@ -72,6 +72,8 @@ const ENFORCEMENT_SCRIPTS = [
 
 const HOOKS = ['pre-commit', 'pre-push'];
 
+const SETTINGS_TEMPLATE = 'settings.json';
+
 const NPM_SCRIPTS = {
   test: 'jest',
   'test:all': 'jest --testPathPattern="\\.(test|integration\\.test)\\.[jt]s$"',
@@ -110,6 +112,15 @@ function copyConfigs(targetDir) {
   copyIfAbsent(
     path.join(TEMPLATES_DIR, 'lint-staged.config.js'),
     path.join(targetDir, 'lint-staged.config.js')
+  );
+}
+
+function copySettings(targetDir) {
+  const claudeDir = path.join(targetDir, '.claude');
+  fs.mkdirSync(claudeDir, { recursive: true });
+  copyIfAbsent(
+    path.join(TEMPLATES_DIR, SETTINGS_TEMPLATE),
+    path.join(claudeDir, 'settings.json')
   );
 }
 
@@ -161,6 +172,7 @@ function main() {
 
   copyHooks(targetDir);
   copyConfigs(targetDir);
+  copySettings(targetDir);
   handleGitignore(targetDir);
   copyIfAbsent(path.join(TEMPLATES_DIR, '.env.example'), path.join(targetDir, '.env.example'));
   mergePackageJson(targetDir);
