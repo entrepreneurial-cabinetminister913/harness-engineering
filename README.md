@@ -218,6 +218,7 @@ What happens during setup:
 | Scripts | Copies enforcement scripts into `scripts/` |
 | Hooks | Sets up pre-commit and pre-push git hooks |
 | Configs | Copies linter, formatter, and environment configs |
+| Permissions | Creates `.claude/settings.json` with allow/deny lists for safe defaults |
 | CLAUDE.md | Generates tailored `CLAUDE.md` files for global and project scope |
 
 Works on **macOS, Linux, and Windows**.
@@ -260,7 +261,8 @@ harness-engineering/
 │   │   ├── lint-staged.config.js     # Auto-fix on staged files
 │   │   ├── .prettierrc               # Code formatting
 │   │   ├── .gitignore                # Standard gitignore
-│   │   └── .env.example              # Environment variable placeholder
+│   │   ├── .env.example              # Environment variable placeholder
+│   │   └── settings.json             # Claude Code permissions (allow/deny lists)
 │   └── references/                   # Stack patterns, enforcement docs, CLAUDE.md guide
 ├── tests/                            # Tests for plugin development
 └── README.md                         # You are here
