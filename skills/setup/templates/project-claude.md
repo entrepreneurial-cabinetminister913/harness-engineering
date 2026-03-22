@@ -50,6 +50,12 @@ node scripts/validate-docs.js        # Pre-commit: warn if CLAUDE.md may need up
 node scripts/validate-docs.js --full # Full: compare CLAUDE.md against codebase
 ```
 
+### Permissions (`.claude/settings.json`)
+
+Pre-approved commands (no confirmation needed): test, lint, build, git operations, read-only shell commands.
+Denied commands (blocked entirely): `rm -rf /`, `git push --force`, `git reset --hard`, `npm publish`, pipe-to-shell patterns.
+Everything else prompts for approval — including normal `rm` for individual files.
+
 ---
 
 ## Architecture

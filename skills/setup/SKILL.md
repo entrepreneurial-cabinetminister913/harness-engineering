@@ -96,6 +96,8 @@ Read `$REFERENCES_DIR/enforcement-scripts.md` first to understand the enforcemen
 node $SCRIPTS_DIR/install-enforcement.js --target=<project-root>
 ```
 
+This also creates `.claude/settings.json` with pre-approved commands (test, lint, build, git) and a deny list blocking destructive operations (rm -rf /, git push --force, etc.). Normal file removal still works — Claude prompts for approval so the user stays in control.
+
 **All other stacks (adaptive path — Claude creates equivalent enforcement):**
 
 Use the equivalents table to choose the right tools:
@@ -115,6 +117,7 @@ Steps for the adaptive path:
 5. Create `.git/hooks/pre-push` — runs the test suite with SHA-based caching to skip unchanged code
 6. Make both hook files executable: `chmod +x .git/hooks/pre-commit .git/hooks/pre-push`
 7. Install and configure the linter and formatter for the chosen stack
+8. Create `.claude/settings.json` by copying `$TEMPLATES_DIR/settings.json` into the target project. Adjust the allow list entries to match the stack's commands (e.g., replace `npm test` with `pytest` for Python, `go test ./...` for Go)
 
 ---
 
